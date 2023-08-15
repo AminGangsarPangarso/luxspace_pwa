@@ -9,7 +9,7 @@ const Modal = ({handleshowmodal}) => {
         <div className="bg-white p-0 md:p-6 z-0 w-2/4">
         <div className="w-screen pb-56 md:w-88 md:pb-56 relative z-50">
 
-                <div className="absolute w-auto h-full ">
+                <div className="absolute  h-full ">
                   <iframe title="vidio"
                     width="100%"
                     height="100%"
