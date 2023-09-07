@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 const ArrivedItems = ({item}) => {
 
     function numberFormat (price){
@@ -6,8 +9,15 @@ const ArrivedItems = ({item}) => {
             currency:'IDR'
         })
            return rupiahFormat.format(price)
+
+           
         
     }
+
+
+    const{id,title,price,image1}=item
+
+ 
     return ( 
         <>
           <div className="px-4 relative card group">
@@ -16,7 +26,7 @@ const ArrivedItems = ({item}) => {
                 style={{width: "287px", height: "386px"}}
               >
                 <div
-                  className="absolute opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center w-full h-full bg-black bg-opacity-35"
+                  className="absolute opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
                 >
                   <div
                     className="bg-white text-black rounded-full w-16 h-16 flex items-center justify-center"
@@ -39,19 +49,19 @@ const ArrivedItems = ({item}) => {
                   </div>
                 </div>
                 <img
-                  src={item.image1}
+                  src={image1}
                   alt=""
                   className="w-full h-full object-cover object-center"
                 />
               </div>
-              <h5 className="text-lg font-semibold mt-4">{item.name}</h5>
-              <span className="">{numberFormat(item.price)}</span>
-              <a href="/details" className="stretched-link">
-               
-              </a>
+              <h5 className="text-lg font-semibold mt-4">{title}</h5>
+              <span className="">{numberFormat(price)}</span>
+              <Link to={`/details/${id}`} state={item} className="stretched-link"></Link>
             </div>
         </>
      );
 }
+
+
  
 export default ArrivedItems;
